@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author wangfk
  */
-@FeignClient(name = "spring-cloud-producer")
+@FeignClient(name = "spring-cloud-producer" , fallback = HelloRemoteHystrix.class)
 public interface HelloRemote {
     /**
      * Feign 调用实现 
